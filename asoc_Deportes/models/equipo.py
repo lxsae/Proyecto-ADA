@@ -13,4 +13,4 @@ class Equipo:
         return 0
 
     def __repr__(self):
-        return f"{self.deporte}, {self.sede}, Jugadores: {len(self.jugadores)}, Rendimiento Promedio: {self.rendimiento_promedio()}"
+        return f"{self.deporte}, Rendimiento : {self.rendimiento_promedio()}"

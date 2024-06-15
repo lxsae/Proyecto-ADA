@@ -15,4 +15,4 @@ class Sede:
         return sum(len(equipo.jugadores) for equipo in self.equipos)
 
     def __repr__(self):
-        return f"{self.nombre}, Equipos: {len(self.equipos)}, Rendimiento Promedio: {self.rendimiento_promedio()}, Total Jugadores: {self.total_jugadores()}"
+        return f"Sede, {self.nombre},Rendimiento : {self.rendimiento_promedio()}"
