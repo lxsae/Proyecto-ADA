@@ -10,6 +10,7 @@ from models.jugador import Jugador
 from models.equipo import Equipo
 from models.sede import Sede
 from utils.algortimos import quicksort_Algorit
+from utils.algortimos import merge_sort
 
 from utils.estadisticas import (equipo_con_mayor_rendimiento, equipo_con_menor_rendimiento,
                                 jugador_con_mayor_rendimiento, jugador_con_menor_rendimiento,
@@ -59,7 +60,12 @@ def leer_datos_desde_archivo(filename):
 if __name__ == "__main__":
     jugadores, equipos, sedes = leer_datos_desde_archivo('./datos.txt')
     
-  
+    # Ordenar sedes
+    sedes_ordenadas = ordenar_sedes(sedes)
+    print("\nSedes ordenadas:")
+    for sede in sedes_ordenadas:
+        print(sede)
+
     # Ordenar equipos en cada sede por rendimiento
     for sede in sedes:
         ordenar_equipos_en_sede(sede)
@@ -69,7 +75,7 @@ if __name__ == "__main__":
         print(f"\nSede: {sede.nombre}, Rendimiento: {sede.rendimiento_promedio():.2f}")
         for equipo in sede.equipos:
             print(f"Equipo: {equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio():.2f}")
-            jugadores_equipo = quicksort_Algorit(equipo.jugadores, key=lambda j: j.rendimiento) 
+            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: j.rendimiento) 
             ids_jugadores = {jugador.identificador 
                              for jugador in jugadores_equipo}
             print(ids_jugadores)
@@ -77,8 +83,8 @@ if __name__ == "__main__":
 
 
         
-    # Ordenar jugadores por rendimiento usando quicksort_Algorit
-    jugadores_ordenados = quicksort_Algorit(jugadores, key=lambda j: j.rendimiento)
+    # Ordenar jugadores por rendimiento usando merge_sort
+    jugadores_ordenados = merge_sort(jugadores, key=lambda j: (j.rendimiento , -j.edad))
     jugadores_ids_ordenados = ", ".join(f"{jugador.identificador}" for jugador in jugadores_ordenados)
     print("\nRanking de jugadores por rendimiento:")
     print(f"{{{jugadores_ids_ordenados}}}")

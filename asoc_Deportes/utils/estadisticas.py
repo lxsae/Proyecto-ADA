@@ -40,4 +40,4 @@ def ordenar_sedes(sedes):
 
 def ordenar_jugadores_de_todas_las_sedes(sedes):
     todos_jugadores = [jugador for sede in sedes for equipo in sede.equipos for jugador in equipo.jugadores]
-    return quicksort_Algorit(todos_jugadores, key=lambda jugador: jugador.rendimiento)
+    return quicksort_Algorit(todos_jugadores, key=lambda jugador: (jugador.rendimiento, jugador.edad))
