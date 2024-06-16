@@ -1,0 +1,21 @@
+# Jugadores (id,nombre,edad,rendimiento)
+10,Daniel Ruiz,17,60
+5,Martina Martinez,30,60
+2,Andres Mosquera,15,80
+3,Ana Lopez,20,60
+7,Juan,22,60
+1,Carlos Perez,26,60
+4,Lucas Martinez,23,60
+6,Maria Fernanda,28,60
+0,Sebastian Serna,40,75
+
+# Equipos (deporte,sede,id-jugadores)
+Baloncesto,Cali,3,1,7
+Futbol,Cali,10,5
+Voleibol,Medellin,4,6
+Tenis,Bogota,2,0
+
+# Sedes (sede, deportes-de-la-sede)
+Cali,Futbol,Baloncesto
+Medellin,Voleibol,Futbol
+Bogota,Tenis,Baloncesto

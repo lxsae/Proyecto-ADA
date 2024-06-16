@@ -6,10 +6,11 @@
 # Nicolas Garces Larrahondo - 2180066
 # Ivan Alexis Noriega - 2126012
 
-
 from models.jugador import Jugador
 from models.equipo import Equipo
 from models.sede import Sede
+from utils.algortimos import quicksort_Algorit
+from utils.algortimos import merge_sort
 
 from utils.estadisticas import (equipo_con_mayor_rendimiento, equipo_con_menor_rendimiento,
                                 jugador_con_mayor_rendimiento, jugador_con_menor_rendimiento,
@@ -17,77 +18,95 @@ from utils.estadisticas import (equipo_con_mayor_rendimiento, equipo_con_menor_r
                                 promedio_edad, promedio_rendimiento,
                                 ordenar_equipos_en_sede, ordenar_sedes, ordenar_jugadores_de_todas_las_sedes)
 
+def leer_datos_desde_archivo(filename):
+    jugadores = []
+    equipos = {}
+    sedes = {}
+
+    with open(filename, "r") as f:
+        seccion = None
+        for linea in f:
+            linea = linea.strip()
+            if linea.startswith("#"):
+                if "Jugadores" in linea:
+                    seccion = "jugadores"
+                elif "Equipos" in linea:
+                    seccion = "equipos"
+                elif "Sedes" in linea:
+                    seccion = "sedes"
+            elif linea:
+                if seccion == "jugadores":
+                    identificador, nombre, edad, rendimiento = linea.split(",")
+                    jugadores.append(Jugador(int(identificador), nombre, int(edad), int(rendimiento)))
+                elif seccion == "equipos":
+                    nombre, ciudad, *jugadores_ids = linea.split(",")
+                    equipo = Equipo(nombre, ciudad)
+                    for jugador_id in jugadores_ids:
+                        jugador = next(j for j in jugadores if j.identificador == int(jugador_id))
+                        equipo.agregar_jugador(jugador)
+                    equipos[nombre] = equipo
+                elif seccion == "sedes":
+                    ciudad, *equipos_nombres = linea.split(",")
+                    sede = Sede(ciudad)
+                    for equipo_nombre in equipos_nombres:
+                        sede.agregar_equipo(equipos[equipo_nombre])
+                    sedes[ciudad] = sede
+
+    return jugadores, list(equipos.values()), list(sedes.values())
+
+
+
+
 if __name__ == "__main__":
-    # Crear jugadores
-    jugadores = [
-        Jugador(10, "Daniel Ruiz", 17, 60),
-        Jugador(5, "Martina Martinez", 30, 50),
-        Jugador(3, "Ana Lopez", 20, 70),
-        Jugador(1, "Carlos Perez", 26, 61)
-    ]
-
-    # Crear equipos y agregar jugadores
-    equipo1 = Equipo("Futbol", "Cali")
-    equipo1.agregar_jugador(jugadores[0])
-    equipo1.agregar_jugador(jugadores[1])
-
-    equipo2 = Equipo("Baloncesto", "Cali")
-    equipo2.agregar_jugador(jugadores[2])
-    equipo2.agregar_jugador(jugadores[3])
-
-    equipo3 = Equipo("Voleibol", "Medellin")
-    equipo3.agregar_jugador(Jugador(4, "Lucas Martinez", 22, 65))
-    equipo3.agregar_jugador(Jugador(6, "Maria Fernanda", 28, 55))
-
-    # Crear sedes y agregar equipos
-    sede1 = Sede("Cali")
-    sede1.agregar_equipo(equipo1)
-    sede1.agregar_equipo(equipo2)
-
-    sede2 = Sede("Medellin")
-    sede2.agregar_equipo(equipo3)
-
-    # Listado de sedes
-    sedes = [sede1, sede2]
-
-    # Ordenar equipos en cada sede
-    for sede in sedes:
-        ordenar_equipos_en_sede(sede)
-
-    print("Equipos ordenados en cada sede:")
-    for sede in sedes:
-        print(sede)
-        for equipo in sede.equipos:
-            print(equipo)
-
+    jugadores, equipos, sedes = leer_datos_desde_archivo('./datos.txt')
+    
     # Ordenar sedes
     sedes_ordenadas = ordenar_sedes(sedes)
     print("\nSedes ordenadas:")
     for sede in sedes_ordenadas:
         print(sede)
 
-    # Ordenar todos los jugadores de todas las sedes por rendimiento
-    jugadores_ordenados = ordenar_jugadores_de_todas_las_sedes(sedes)
-    print("\nJugadores ordenados por rendimiento:")
-    for jugador in jugadores_ordenados:
-        print(jugador)
+    # Ordenar equipos en cada sede por rendimiento
+    for sede in sedes:
+        ordenar_equipos_en_sede(sede)
+
+    print("\nEquipos ordenados en cada sede:")
+    for sede in sedes:
+        print(f"\nSede: {sede.nombre}, Rendimiento: {sede.rendimiento_promedio():.2f}")
+        for equipo in sede.equipos:
+            print(f"Equipo: {equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio():.2f}")
+            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: j.rendimiento) 
+            ids_jugadores = {jugador.identificador 
+                             for jugador in jugadores_equipo}
+            print(ids_jugadores)
+
+
+
+        
+    # Ordenar jugadores por rendimiento usando merge_sort
+    jugadores_ordenados = merge_sort(jugadores, key=lambda j: (j.rendimiento , -j.edad))
+    jugadores_ids_ordenados = ", ".join(f"{jugador.identificador}" for jugador in jugadores_ordenados)
+    print("\nRanking de jugadores por rendimiento:")
+    print(f"{{{jugadores_ids_ordenados}}}")
+   
+
 
     # Obtener equipo con mayor y menor rendimiento
     todos_equipos = [equipo for sede in sedes for equipo in sede.equipos]
     equipo_mayor_rendimiento = equipo_con_mayor_rendimiento(todos_equipos)
     equipo_menor_rendimiento = equipo_con_menor_rendimiento(todos_equipos)
-    print("Equipo con mayor rendimiento:", equipo_mayor_rendimiento)
+    print("\nEquipo con mayor rendimiento:", equipo_mayor_rendimiento)
     print("Equipo con menor rendimiento:", equipo_menor_rendimiento)
     
     # Obtener jugador con mayor y menor rendimiento
     jugador_mayor_rendimiento = jugador_con_mayor_rendimiento(jugadores)
     jugador_menor_rendimiento = jugador_con_menor_rendimiento(jugadores)
-    print("Jugador con mayor rendimiento:", jugador_mayor_rendimiento)
+    print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
     print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
     
     # Calcular jugador más joven
     joven = jugador_mas_joven(jugadores)
-    print(f"Jugador más joven: {joven}")
+    print(f"\nJugador más joven: {joven}")
 
     # Calcular jugador más veterano
     veterano = jugador_mas_veterano(jugadores)
@@ -95,7 +114,7 @@ if __name__ == "__main__":
 
     # Calcular promedio de edad
     edad_promedio = promedio_edad(jugadores)
-    print(f"Promedio de edad de los jugadores: {edad_promedio:.2f}")
+    print(f"\nPromedio de edad de los jugadores: {edad_promedio:.2f}")
 
     # Calcular promedio de rendimiento
     rendimiento_promedio = promedio_rendimiento(jugadores)
