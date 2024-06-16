@@ -18,7 +18,7 @@ jugadores requieren planes para mejorar su rendimiento.
 - Clonas el repositorio
   `  https://github.com/lxsae/Proyecto-ADA.git`
 - Desde la carpeta raiz, ingresas a ` Proyecto-ADA\asoc_Deportes`
-- Ejecutas el comando Python el archivo main.py
+- Ejecutas el comando `python main.py `
 
 # Nota:
 
