@@ -17,11 +17,10 @@ def estadisticas_jugadores(jugadores,orden):
         return jugadores_ordenados[0]
 
 def jugador_edad(jugadores,orden):
-    jugadores_ordenados = merge_sort(jugadores, key=lambda jugador: jugador.edad)
     if orden == "mayor":
-        return jugadores_ordenados[-1]
+        return maximum(jugadores, key=lambda jugador: jugador.edad)
     else:
-        return jugadores_ordenados[0]
+        return minimum(jugadores, key=lambda jugador: jugador.edad)
 
 def promedio_edad(jugadores):
     if jugadores:
@@ -42,4 +41,34 @@ def ordenar_equipos_en_sede(sede):
 def ordenar_sedes(sedes):
     sedes = merge_sort(sedes, key=lambda sede: (sede.rendimiento_promedio(), -sede.total_jugadores()))
     return sedes
+
+
+
+def maximum(list, key=lambda x: x):
+    if not list:
+        return None
+
+    max_value = list[0]
+    max_element = list[0]
+
+    for elm in list:
+        if key(elm) > key(max_value):
+            max_value = elm
+            max_element = elm
+
+    return max_element
+
+def minimum(list, key=lambda x: x):
+    if not list:
+        return None
+
+    min_value = list[0]
+    min_element = list[0]
+
+    for elm in list:
+        if key(elm) < key(min_value):
+            min_value = elm
+            min_element = elm
+
+    return min_element
 
