@@ -1,0 +1,170 @@
+
+--- Resultados usando merge_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 62.77777777777777, Total jugadores: 8
+Sede, Medellin,Rendimiento : 64.33333333333333, Total jugadores: 6
+Sede, Manizales,Rendimiento : 64.5, Total jugadores: 5
+Sede, Pereira,Rendimiento : 64.5, Total jugadores: 4
+Sede, Barranquilla,Rendimiento : 66.25, Total jugadores: 4
+Sede, Bogota,Rendimiento : 71.05555555555556, Total jugadores: 8
+Sede, Cartagena,Rendimiento : 76.33333333333334, Total jugadores: 5
+Sede, Bucaramanga,Rendimiento : 77.72222222222223, Total jugadores: 7
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 62.78
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Hockey, Rendimiento: 68.33
+{1, 7, 13}
+
+Sede: Medellin, Rendimiento: 64.33
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Rugby, Rendimiento: 73.00
+{20, 19}
+
+Sede: Bogota, Rendimiento: 71.06
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Ciclismo, Rendimiento: 75.67
+{21, 23, 25}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Cartagena, Rendimiento: 76.33
+Equipo: Boxeo, Rendimiento: 75.00
+{10, 14}
+Equipo: Atletismo, Rendimiento: 77.67
+{11, 15, 13}
+
+Sede: Bucaramanga, Rendimiento: 77.72
+Equipo: Natacion, Rendimiento: 75.67
+{12, 16, 14}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+Equipo: Remo, Rendimiento: 80.00
+{29, 30}
+
+Sede: Barranquilla, Rendimiento: 66.25
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Beisbol, Rendimiento: 72.50
+{17, 18}
+
+Sede: Manizales, Rendimiento: 64.50
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Gimnasia, Rendimiento: 69.00
+{26, 24, 22}
+
+Sede: Pereira, Rendimiento: 64.50
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Esgrima, Rendimiento: 69.00
+{27, 28}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 26, 12, 20, 27, 17, 21, 24, 11, 28, 16, 22, 0, 23, 18, 15, 29, 19, 2, 30, 25, 13, 14}
+
+Equipo con mayor rendimiento: Remo, Rendimiento : 80.0
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 14, Miguel Angel, 21, 90
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 25.14
+Promedio del rendimiento de los jugadores: 70.97
+
+--- Resultados usando quick_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 62.77777777777777, Total jugadores: 8
+Sede, Medellin,Rendimiento : 64.33333333333333, Total jugadores: 6
+Sede, Manizales,Rendimiento : 64.5, Total jugadores: 5
+Sede, Pereira,Rendimiento : 64.5, Total jugadores: 4
+Sede, Barranquilla,Rendimiento : 66.25, Total jugadores: 4
+Sede, Bogota,Rendimiento : 71.05555555555556, Total jugadores: 8
+Sede, Cartagena,Rendimiento : 76.33333333333334, Total jugadores: 5
+Sede, Bucaramanga,Rendimiento : 77.72222222222223, Total jugadores: 7
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 62.78
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Hockey, Rendimiento: 68.33
+{1, 7, 13}
+
+Sede: Medellin, Rendimiento: 64.33
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Rugby, Rendimiento: 73.00
+{20, 19}
+
+Sede: Bogota, Rendimiento: 71.06
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Ciclismo, Rendimiento: 75.67
+{21, 23, 25}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Cartagena, Rendimiento: 76.33
+Equipo: Boxeo, Rendimiento: 75.00
+{10, 14}
+Equipo: Atletismo, Rendimiento: 77.67
+{11, 15, 13}
+
+Sede: Bucaramanga, Rendimiento: 77.72
+Equipo: Natacion, Rendimiento: 75.67
+{12, 16, 14}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+Equipo: Remo, Rendimiento: 80.00
+{29, 30}
+
+Sede: Barranquilla, Rendimiento: 66.25
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Beisbol, Rendimiento: 72.50
+{17, 18}
+
+Sede: Manizales, Rendimiento: 64.50
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Gimnasia, Rendimiento: 69.00
+{26, 24, 22}
+
+Sede: Pereira, Rendimiento: 64.50
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Esgrima, Rendimiento: 69.00
+{27, 28}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 26, 12, 20, 27, 17, 21, 24, 11, 28, 16, 22, 0, 23, 18, 15, 29, 19, 2, 30, 25, 13, 14}
+
+Equipo con mayor rendimiento: Remo, Rendimiento : 80.0
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 14, Miguel Angel, 21, 90
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 25.14
+Promedio del rendimiento de los jugadores: 70.97

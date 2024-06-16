@@ -1,0 +1,133 @@
+--- Resultados usando merge_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 62.77777777777777, Total jugadores: 8
+Sede, Medellin,Rendimiento : 64.33333333333333, Total jugadores: 6
+Sede, Barranquilla,Rendimiento : 66.25, Total jugadores: 4
+Sede, Bogota,Rendimiento : 68.75, Total jugadores: 5
+Sede, Cartagena,Rendimiento : 76.33333333333334, Total jugadores: 5
+Sede, Bucaramanga,Rendimiento : 76.58333333333334, Total jugadores: 5
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 62.78
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Hockey, Rendimiento: 68.33
+{1, 7, 13}
+
+Sede: Medellin, Rendimiento: 64.33
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Rugby, Rendimiento: 73.00
+{20, 19}
+
+Sede: Bogota, Rendimiento: 68.75
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Cartagena, Rendimiento: 76.33
+Equipo: Boxeo, Rendimiento: 75.00
+{10, 14}
+Equipo: Atletismo, Rendimiento: 77.67
+{11, 15, 13}
+
+Sede: Bucaramanga, Rendimiento: 76.58
+Equipo: Natacion, Rendimiento: 75.67
+{12, 16, 14}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Barranquilla, Rendimiento: 66.25
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Beisbol, Rendimiento: 72.50
+{17, 18}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 12, 20, 17, 11, 16, 0, 18, 15, 19, 2, 13, 14}
+
+Equipo con mayor rendimiento: Atletismo, Rendimiento : 77.66666666666667
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 14, Miguel Angel, 21, 90
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 25.42
+Promedio del rendimiento de los jugadores: 69.79
+
+--- Resultados usando quick_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 62.77777777777777, Total jugadores: 8
+Sede, Medellin,Rendimiento : 64.33333333333333, Total jugadores: 6
+Sede, Barranquilla,Rendimiento : 66.25, Total jugadores: 4
+Sede, Bogota,Rendimiento : 68.75, Total jugadores: 5
+Sede, Cartagena,Rendimiento : 76.33333333333334, Total jugadores: 5
+Sede, Bucaramanga,Rendimiento : 76.58333333333334, Total jugadores: 5
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 62.78
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Hockey, Rendimiento: 68.33
+{1, 7, 13}
+
+Sede: Medellin, Rendimiento: 64.33
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+Equipo: Rugby, Rendimiento: 73.00
+{20, 19}
+
+Sede: Bogota, Rendimiento: 68.75
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Cartagena, Rendimiento: 76.33
+Equipo: Boxeo, Rendimiento: 75.00
+{10, 14}
+Equipo: Atletismo, Rendimiento: 77.67
+{11, 15, 13}
+
+Sede: Bucaramanga, Rendimiento: 76.58
+Equipo: Natacion, Rendimiento: 75.67
+{12, 16, 14}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Sede: Barranquilla, Rendimiento: 66.25
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Beisbol, Rendimiento: 72.50
+{17, 18}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 12, 20, 17, 11, 16, 0, 18, 15, 19, 2, 13, 14}
+
+Equipo con mayor rendimiento: Atletismo, Rendimiento : 77.66666666666667
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 14, Miguel Angel, 21, 90
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 25.42
+Promedio del rendimiento de los jugadores: 69.79

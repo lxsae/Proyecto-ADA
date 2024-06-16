@@ -1,0 +1,137 @@
+--- Resultados usando merge_sort ---
+
+Sedes ordenadas:
+Sede, Manizales,Rendimiento : 62.58333333333333, Total jugadores: 7
+Sede, Medellin,Rendimiento : 64.60000000000001, Total jugadores: 13
+Sede, Cali,Rendimiento : 64.95, Total jugadores: 13
+Sede, Cartagena,Rendimiento : 65.08333333333333, Total jugadores: 7
+Sede, Bogota,Rendimiento : 66.17083333333333, Total jugadores: 16
+Sede, Pereira,Rendimiento : 73.33333333333333, Total jugadores: 3
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 64.95
+Equipo: Baloncesto, Rendimiento: 61.60
+{1, 59, 7, 3, 44}
+Equipo: Balonmano, Rendimiento: 65.75
+{59, 47, 56, 58}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Medellin, Rendimiento: 64.60
+Equipo: Voleibol, Rendimiento: 61.80
+{6, 46, 4, 48, 42}
+Equipo: Atletismo, Rendimiento: 64.50
+{50, 47, 52, 45}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Bogota, Rendimiento: 66.17
+Equipo: Baloncesto, Rendimiento: 61.60
+{1, 59, 7, 3, 44}
+Equipo: Natacion, Rendimiento: 64.75
+{1, 48, 49, 57}
+Equipo: Ciclismo, Rendimiento: 65.00
+{6, 52, 49, 43}
+Equipo: Tenis, Rendimiento: 73.33
+{55, 0, 2}
+
+Sede: Cartagena, Rendimiento: 65.08
+Equipo: Beisbol, Rendimiento: 62.67
+{50, 54, 51}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Manizales, Rendimiento: 62.58
+Equipo: Golf, Rendimiento: 60.67
+{5, 46, 47}
+Equipo: Atletismo, Rendimiento: 64.50
+{50, 47, 52, 45}
+
+Sede: Pereira, Rendimiento: 73.33
+Equipo: Tenis, Rendimiento: 73.33
+{55, 0, 2}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 46, 1, 59, 4, 7, 3, 10, 50, 54, 47, 52, 48, 55, 42, 51, 49, 44, 57, 53, 43, 56, 58, 45, 0, 2}
+
+Equipo con mayor rendimiento: Tenis, Rendimiento : 73.33333333333333
+Equipo con menor rendimiento: Golf, Rendimiento : 60.666666666666664
+
+Jugador con mayor rendimiento: 2, Andres Mosquera, 15, 80
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 24.04
+Promedio del rendimiento de los jugadores: 65.07
+
+--- Resultados usando quick_sort ---
+
+Sedes ordenadas:
+Sede, Manizales,Rendimiento : 62.58333333333333, Total jugadores: 7
+Sede, Medellin,Rendimiento : 64.60000000000001, Total jugadores: 13
+Sede, Cali,Rendimiento : 64.95, Total jugadores: 13
+Sede, Cartagena,Rendimiento : 65.08333333333333, Total jugadores: 7
+Sede, Bogota,Rendimiento : 66.17083333333333, Total jugadores: 16
+Sede, Pereira,Rendimiento : 73.33333333333333, Total jugadores: 3
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 64.95
+Equipo: Baloncesto, Rendimiento: 61.60
+{1, 59, 7, 3, 44}
+Equipo: Balonmano, Rendimiento: 65.75
+{59, 47, 56, 58}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Medellin, Rendimiento: 64.60
+Equipo: Voleibol, Rendimiento: 61.80
+{6, 46, 4, 48, 42}
+Equipo: Atletismo, Rendimiento: 64.50
+{50, 47, 52, 45}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Bogota, Rendimiento: 66.17
+Equipo: Baloncesto, Rendimiento: 61.60
+{1, 59, 7, 3, 44}
+Equipo: Natacion, Rendimiento: 64.75
+{1, 48, 49, 57}
+Equipo: Ciclismo, Rendimiento: 65.00
+{6, 52, 49, 43}
+Equipo: Tenis, Rendimiento: 73.33
+{55, 0, 2}
+
+Sede: Cartagena, Rendimiento: 65.08
+Equipo: Beisbol, Rendimiento: 62.67
+{50, 54, 51}
+Equipo: Futbol, Rendimiento: 67.50
+{10, 54, 53, 2}
+
+Sede: Manizales, Rendimiento: 62.58
+Equipo: Golf, Rendimiento: 60.67
+{5, 46, 47}
+Equipo: Atletismo, Rendimiento: 64.50
+{50, 47, 52, 45}
+
+Sede: Pereira, Rendimiento: 73.33
+Equipo: Tenis, Rendimiento: 73.33
+{55, 0, 2}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 46, 1, 59, 4, 7, 3, 10, 50, 54, 47, 52, 48, 55, 42, 51, 49, 44, 57, 53, 43, 56, 58, 45, 0, 2}
+
+Equipo con mayor rendimiento: Tenis, Rendimiento : 73.33333333333333
+Equipo con menor rendimiento: Golf, Rendimiento : 60.666666666666664
+
+Jugador con mayor rendimiento: 2, Andres Mosquera, 15, 80
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 24.04
+Promedio del rendimiento de los jugadores: 65.07

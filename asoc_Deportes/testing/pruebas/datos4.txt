@@ -1,0 +1,50 @@
+#Jugadores (id,nombre,edad,rendimiento)
+10,Daniel Ruiz,17,60
+5,Martina Martinez,30,60
+2,Andres Mosquera,15,80
+3,Ana Lopez,20,60
+7,Juan,22,60
+1,Carlos Perez,26,60
+4,Lucas Martinez,23,60
+6,Maria Fernanda,28,60
+0,Sebastian Serna,40,75
+42,Isabel Garcia,19,65
+43,Miguel Ruiz,22,70
+44,Lorena Soto,20,68
+45,Oscar Vega,30,72
+46,Monica Diaz,27,60
+47,Sergio Arango,24,62
+48,Luisa Mendoza,29,64
+49,Enrique Pineda,21,67
+50,Carolina Vallejo,25,61
+51,Juan Pablo Garcia,28,66
+52,Camila Arboleda,26,63
+53,Fernando Rojas,22,69
+54,Claudia Jimenez,23,61
+55,Francisco Ramirez,31,65
+56,Juliana Pardo,20,70
+57,Cristian Herrera,19,68
+58,Paula Gutierrez,18,71
+59,Ruben Torres,24,60
+
+
+#Equipos (deporte,sede,id-jugadores)
+Baloncesto,Cali,3,1,7,44,59
+Futbol,Cali,10,54,53,2
+Voleibol,Medellin,4,6,42,46,48
+Tenis,Bogota,2,0,55
+Natacion,Bogota,1,48,57,49
+Atletismo,Medellin,45,47,52,50
+Balonmano,Cali,58,59,56,47
+Beisbol,Cartagena,50,54,51
+Ciclismo,Bogota,49,6,43,52
+Golf,Manizales,46,5,47
+
+
+#Sedes (sede, deportes-de-la-sede)
+Cali,Futbol,Baloncesto,Balonmano
+Medellin,Voleibol,Futbol,Atletismo
+Bogota,Tenis,Baloncesto,Natacion,Ciclismo
+Cartagena,Beisbol,Futbol
+Manizales,Golf,Atletismo
+Pereira,Tenis
