@@ -115,7 +115,7 @@ def mostrar_resultados(jugadores,equipos, sedes, metodo_nombre):
 
 
 if __name__ == "__main__":
-    jugadores, equipos, sedes = leer_datos_desde_archivo('./datos.txt')
+    jugadores, equipos, sedes = leer_datos_desde_archivo('./testing/pruebas/datos4.txt')
     
     # Resultados usando merge_sort
     mostrar_resultados(jugadores, equipos, sedes, "merge_sort")

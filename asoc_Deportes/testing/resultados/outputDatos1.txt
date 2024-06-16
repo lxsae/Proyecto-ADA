@@ -1,0 +1,83 @@
+--- Resultados usando merge_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 60.0, Total jugadores: 5
+Sede, Medellin,Rendimiento : 60.0, Total jugadores: 4
+Sede, Bogota,Rendimiento : 68.75, Total jugadores: 5
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 60.00
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+
+Sede: Medellin, Rendimiento: 60.00
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+
+Sede: Bogota, Rendimiento: 68.75
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 0, 2}
+
+Equipo con mayor rendimiento: Tenis, Rendimiento : 77.5
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 2, Andres Mosquera, 15, 80
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 24.56
+Promedio del rendimiento de los jugadores: 63.89
+
+--- Resultados usando quick_sort ---
+
+Sedes ordenadas:
+Sede, Cali,Rendimiento : 60.0, Total jugadores: 5
+Sede, Medellin,Rendimiento : 60.0, Total jugadores: 4
+Sede, Bogota,Rendimiento : 68.75, Total jugadores: 5
+
+Equipos ordenados en cada sede:
+
+Sede: Cali, Rendimiento: 60.00
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+
+Sede: Medellin, Rendimiento: 60.00
+Equipo: Futbol, Rendimiento: 60.00
+{5, 10}
+Equipo: Voleibol, Rendimiento: 60.00
+{6, 4}
+
+Sede: Bogota, Rendimiento: 68.75
+Equipo: Baloncesto, Rendimiento: 60.00
+{1, 7, 3}
+Equipo: Tenis, Rendimiento: 77.50
+{0, 2}
+
+Ranking de jugadores por rendimiento:
+{5, 6, 1, 4, 7, 3, 10, 0, 2}
+
+Equipo con mayor rendimiento: Tenis, Rendimiento : 77.5
+Equipo con menor rendimiento: Baloncesto, Rendimiento : 60.0
+
+Jugador con mayor rendimiento: 2, Andres Mosquera, 15, 80
+Jugador con menor rendimiento: 5, Martina Martinez, 30, 60
+
+Jugador más joven: 2, Andres Mosquera, 15, 80
+Jugador más veterano: 0, Sebastian Serna, 40, 75
+
+Promedio de edad de los jugadores: 24.56
+Promedio del rendimiento de los jugadores: 63.89
