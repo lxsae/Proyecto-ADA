@@ -7,13 +7,13 @@ from utils.estadisticas import (equipo_con_mayor_rendimiento, equipo_con_menor_r
                                 jugador_con_mayor_rendimiento, jugador_con_menor_rendimiento,
                                 jugador_mas_joven, jugador_mas_veterano,
                                 promedio_edad, promedio_rendimiento,
-                                ordenar_equipos_en_sede, ordenar_sedes, ordenar_jugadores_de_todas_las_sedes)
+                                ordenar_equipos_en_sede, ordenar_sedes)
 
 from utils.estadisticas2 import (equipo_con_mayor_rendimiento2, equipo_con_menor_rendimiento2,
                                 jugador_con_mayor_rendimiento2, jugador_con_menor_rendimiento2,
                                 jugador_mas_joven2, jugador_mas_veterano2,
                                 promedio_edad2, promedio_rendimiento2,
-                                ordenar_equipos_en_sede2, ordenar_sedes2, ordenar_jugadores_de_todas_las_sedes2)
+                                ordenar_equipos_en_sede2, ordenar_sedes2)
 
 
 def leer_datos_desde_archivo(filename):
@@ -53,7 +53,7 @@ def leer_datos_desde_archivo(filename):
     return jugadores, list(equipos.values()), list(sedes.values())
 
 
-def mostrar_resultados(jugadores, equipos, sedes, metodo_nombre):
+def mostrar_resultados(jugadores,sedes, metodo_nombre):
     print(f"\n--- Resultados usando {metodo_nombre} ---")
     
     # Ordenar sedes
@@ -78,9 +78,9 @@ def mostrar_resultados(jugadores, equipos, sedes, metodo_nombre):
         print(f"\nSede: {sede.nombre}, Rendimiento: {sede.rendimiento_promedio():.2f}")
         for equipo in sede.equipos:
             print(f"Equipo: {equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio():.2f}")
-            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: j.rendimiento) if metodo_nombre == "merge_sort" else quicksort_Algorit(equipo.jugadores, key=lambda j: j.rendimiento)
-            ids_jugadores = {jugador.identificador for jugador in jugadores_equipo}
-            print(ids_jugadores)
+            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: (j.rendimiento , -j.edad)) 
+            jugadores_ids_ordenados = ", ".join(f"{jugador.identificador}" for jugador in jugadores_equipo)
+            print(f"{{{jugadores_ids_ordenados}}}")
 
     # Ordenar jugadores por rendimiento
     jugadores_ordenados = merge_sort(jugadores, key=lambda j: (j.rendimiento, -j.edad)) if metodo_nombre == "merge_sort" else quicksort_Algorit(jugadores, key=lambda j: (j.rendimiento, -j.edad))

@@ -1,5 +1,5 @@
 from utils.algortimos import quicksort_Algorit 
-from utils.algortimos import merge_sort
+
 
 def equipo_con_mayor_rendimiento2(equipos):
     return max(equipos, key=lambda equipo: equipo.rendimiento_promedio())
@@ -39,6 +39,3 @@ def ordenar_sedes2(sedes):
     sedes = quicksort_Algorit(sedes, key=lambda sede: (sede.rendimiento_promedio(), -sede.total_jugadores()))
     return sedes
 
-def ordenar_jugadores_de_todas_las_sedes2(sedes):
-    todos_jugadores = [jugador for sede in sedes for equipo in sede.equipos for jugador in equipo.jugadores]
-    return quicksort_Algorit(todos_jugadores, key=lambda jugador: (jugador.rendimiento, jugador.edad))
