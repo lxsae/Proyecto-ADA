@@ -3,15 +3,11 @@ from models.equipo import Equipo
 from models.sede import Sede
 from utils.algortimos import quicksort_Algorit, merge_sort
 
-from utils.estadisticas import (equipo_con_mayor_rendimiento, equipo_con_menor_rendimiento,
-                                jugador_con_mayor_rendimiento, jugador_con_menor_rendimiento,
-                                jugador_mas_joven, jugador_mas_veterano,
+from utils.estadisticas import (estadisticas_equipos, estadisticas_jugadores, jugador_edad,
                                 promedio_edad, promedio_rendimiento,
                                 ordenar_equipos_en_sede, ordenar_sedes)
 
-from utils.estadisticas2 import (equipo_con_mayor_rendimiento2, equipo_con_menor_rendimiento2,
-                                jugador_con_mayor_rendimiento2, jugador_con_menor_rendimiento2,
-                                jugador_mas_joven2, jugador_mas_veterano2,
+from utils.estadisticas2 import (estadisticas_equipos2, estadisticas_jugadores2, jugador_edad2,
                                 promedio_edad2, promedio_rendimiento2,
                                 ordenar_equipos_en_sede2, ordenar_sedes2)
 
@@ -53,7 +49,7 @@ def leer_datos_desde_archivo(filename):
     return jugadores, list(equipos.values()), list(sedes.values())
 
 
-def mostrar_resultados(jugadores,sedes, metodo_nombre):
+def mostrar_resultados(jugadores,equipos, sedes, metodo_nombre):
     print(f"\n--- Resultados usando {metodo_nombre} ---")
     
     # Ordenar sedes
@@ -78,7 +74,7 @@ def mostrar_resultados(jugadores,sedes, metodo_nombre):
         print(f"\nSede: {sede.nombre}, Rendimiento: {sede.rendimiento_promedio():.2f}")
         for equipo in sede.equipos:
             print(f"Equipo: {equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio():.2f}")
-            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: (j.rendimiento , -j.edad)) 
+            jugadores_equipo = merge_sort(equipo.jugadores, key=lambda j: (j.rendimiento , -j.edad)) if metodo_nombre == "merge_sort" else quicksort_Algorit(equipo.jugadores, key=lambda j: (j.rendimiento, -j.edad))
             jugadores_ids_ordenados = ", ".join(f"{jugador.identificador}" for jugador in jugadores_equipo)
             print(f"{{{jugadores_ids_ordenados}}}")
 
@@ -90,23 +86,23 @@ def mostrar_resultados(jugadores,sedes, metodo_nombre):
 
     # Obtener equipo con mayor y menor rendimiento
     todos_equipos = [equipo for sede in sedes for equipo in sede.equipos]
-    equipo_mayor_rendimiento = equipo_con_mayor_rendimiento(todos_equipos) if metodo_nombre == "merge_sort" else equipo_con_mayor_rendimiento2(todos_equipos)
-    equipo_menor_rendimiento = equipo_con_menor_rendimiento(todos_equipos) if metodo_nombre == "merge_sort" else equipo_con_menor_rendimiento2(todos_equipos)
+    equipo_mayor_rendimiento = estadisticas_equipos(todos_equipos, "mayor") if metodo_nombre == "merge_sort" else estadisticas_equipos2(todos_equipos, "mayor")
+    equipo_menor_rendimiento = estadisticas_equipos(todos_equipos, "menor") if metodo_nombre == "merge_sort" else estadisticas_equipos2(todos_equipos, "menor")
     print("\nEquipo con mayor rendimiento:", equipo_mayor_rendimiento)
     print("Equipo con menor rendimiento:", equipo_menor_rendimiento)
 
     # Obtener jugador con mayor y menor rendimiento
-    jugador_mayor_rendimiento = jugador_con_mayor_rendimiento(jugadores) if metodo_nombre == "merge_sort" else jugador_con_mayor_rendimiento2(jugadores)
-    jugador_menor_rendimiento = jugador_con_menor_rendimiento(jugadores) if metodo_nombre == "merge_sort" else jugador_con_menor_rendimiento2(jugadores)
+    jugador_mayor_rendimiento = estadisticas_jugadores(jugadores, "mayor") if metodo_nombre == "merge_sort" else estadisticas_jugadores2(jugadores, "mayor")
+    jugador_menor_rendimiento = estadisticas_jugadores(jugadores, "menor") if metodo_nombre == "merge_sort" else estadisticas_jugadores2(jugadores, "menor")
     print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
     print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
 
     # Calcular jugador más joven
-    joven = jugador_mas_joven(jugadores) if metodo_nombre == "merge_sort" else jugador_mas_joven2(jugadores)
+    joven = jugador_edad(jugadores, "menor") if metodo_nombre == "merge_sort" else jugador_edad2(jugadores, "menor")
     print(f"\nJugador más joven: {joven}")
 
     # Calcular jugador más veterano
-    veterano = jugador_mas_veterano(jugadores) if metodo_nombre == "merge_sort" else jugador_mas_veterano2(jugadores)
+    veterano = jugador_edad(jugadores, "mayor") if metodo_nombre == "merge_sort" else jugador_edad2(jugadores, "mayor")
     print(f"Jugador más veterano: {veterano}")
 
     # Calcular promedio de edad

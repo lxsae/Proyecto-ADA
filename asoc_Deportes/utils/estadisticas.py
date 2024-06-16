@@ -1,23 +1,27 @@
 
 from utils.algortimos import merge_sort
 
-def equipo_con_mayor_rendimiento(equipos):
-    return max(equipos, key=lambda equipo: equipo.rendimiento_promedio())
 
-def equipo_con_menor_rendimiento(equipos):
-    return min(equipos, key=lambda equipo: equipo.rendimiento_promedio())
+def estadisticas_equipos(equipos,orden):
+    equipos_ordenados = merge_sort(equipos, key=lambda equipo: (equipo.rendimiento_promedio(), -len(equipo.jugadores)))
+    if orden == "mayor":
+        return equipos_ordenados[-1]
+    else:
+        return equipos_ordenados[0]
 
-def jugador_con_mayor_rendimiento(jugadores):
-    return max(jugadores, key=lambda jugador: jugador.rendimiento)
+def estadisticas_jugadores(jugadores,orden):
+    jugadores_ordenados = merge_sort(jugadores, key=lambda jugador: (jugador.rendimiento, -jugador.edad))
+    if orden == "mayor":
+        return jugadores_ordenados[-1]
+    else:
+        return jugadores_ordenados[0]
 
-def jugador_con_menor_rendimiento(jugadores):
-    return min(jugadores, key=lambda jugador: jugador.rendimiento)
-
-def jugador_mas_joven(jugadores):
-    return min(jugadores, key=lambda jugador: jugador.edad)
-
-def jugador_mas_veterano(jugadores):
-    return max(jugadores, key=lambda jugador: jugador.edad)
+def jugador_edad(jugadores,orden):
+    jugadores_ordenados = merge_sort(jugadores, key=lambda jugador: jugador.edad)
+    if orden == "mayor":
+        return jugadores_ordenados[-1]
+    else:
+        return jugadores_ordenados[0]
 
 def promedio_edad(jugadores):
     if jugadores:

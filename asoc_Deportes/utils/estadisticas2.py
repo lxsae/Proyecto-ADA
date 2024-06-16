@@ -1,23 +1,27 @@
 from utils.algortimos import quicksort_Algorit 
 
 
-def equipo_con_mayor_rendimiento2(equipos):
-    return max(equipos, key=lambda equipo: equipo.rendimiento_promedio())
+def estadisticas_equipos2(equipos,orden):
+    equipos_ordenados = quicksort_Algorit(equipos, key=lambda equipo: (equipo.rendimiento_promedio(), -len(equipo.jugadores)))
+    if orden == "mayor":
+        return equipos_ordenados[-1]
+    else:
+        return equipos_ordenados[0]
 
-def equipo_con_menor_rendimiento2(equipos):
-    return min(equipos, key=lambda equipo: equipo.rendimiento_promedio())
+def estadisticas_jugadores2(jugadores,orden):
+    jugadores_ordenados = quicksort_Algorit(jugadores, key=lambda jugador: (jugador.rendimiento, -jugador.edad))
+    if orden == "mayor":
+        return jugadores_ordenados[-1]
+    else:
+        return jugadores_ordenados[0]
 
-def jugador_con_mayor_rendimiento2(jugadores):
-    return max(jugadores, key=lambda jugador: jugador.rendimiento)
+def jugador_edad2(jugadores,orden):
+    jugadores_ordenados = quicksort_Algorit(jugadores, key=lambda jugador: jugador.edad)
+    if orden == "mayor":
+        return jugadores_ordenados[-1]
+    else:
+        return jugadores_ordenados[0]
 
-def jugador_con_menor_rendimiento2(jugadores):
-    return min(jugadores, key=lambda jugador: jugador.rendimiento)
-
-def jugador_mas_joven2(jugadores):
-    return min(jugadores, key=lambda jugador: jugador.edad)
-
-def jugador_mas_veterano2(jugadores):
-    return max(jugadores, key=lambda jugador: jugador.edad)
 
 def promedio_edad2(jugadores):
     if jugadores:
