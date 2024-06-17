@@ -55,7 +55,7 @@ def merge(izquierda, derecha,key):
     result.extend(derecha[j:])
     return result
 
-""" # Casos de prueba (Merge Sort)
+ ## Casos de prueba (Merge Sort)
 start_time = timeit.default_timer()
 merge_sort([3, 5, 2, 1, 6])
 end_time = timeit.default_timer()
@@ -115,4 +115,4 @@ print(f"Tiempo de ejecucion para el quinto caso de prueba (Quick Sort): {(end_ti
 start_time = timeit.default_timer()
 quicksort_Algorit([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 end_time = timeit.default_timer()
-print(f"Tiempo de ejecucion para el sexto caso de prueba (Quick Sort): {(end_time - start_time) * 1000:.6f} milisegundos") """
+print(f"Tiempo de ejecucion para el sexto caso de prueba (Quick Sort): {(end_time - start_time) * 1000:.6f} milisegundos") 
